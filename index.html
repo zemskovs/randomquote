@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Случайна цитата</title>
+</head>
+<body>
+<section>
+	<blockquote id = "q">
+		<p id="quotation"></p>
+		<p id="source"></p>
+	</blockquote>
+
+	<button id="btn" onclick="setNewQuote ()">Новая цитата</button>
+</section>
+<script>
+	const quotes = [
+ { 
+  "quote" : "The only sin is ignorance", 
+  "source" : "Christopher Marlowe" 
+ },
+ {
+  "quote" : "A man is his own easiest dupe, for what he wishes to be true he generally believes to be true", 
+  "source" : "Demosthenes"
+ },
+ {
+  "quote" : "A lie can travel halfway around the world while the truth is putting on its shoes", 
+  "source" : "Mark Twain"
+ },
+ {
+  "quote" : "Береги нервишки", 
+  "source" : "Мари"
+ }
+]
+
+	function setNewQuote () {
+		let quotation = document.getElementById('quotation');
+		let source = document.getElementById('source');
+		let random = quotes[Math.floor(Math.random() * quotes.length)];
+		  quotation.innerText = `“${random.quote}.”`;
+		  source.innerText = random.source;
+
+	}
+	
+
+
+</script>
+</body>
+</html>
